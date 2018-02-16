@@ -1,2 +1,2 @@
-# RPG-Game
-Black Panther Theme Role Playing Game
+# week-4-game
+Game made using html, CSS, Javascript, and Jquery

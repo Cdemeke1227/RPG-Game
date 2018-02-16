@@ -1,0 +1,84 @@
+body {
+    background-image: url("../images/gun_metal.png");
+}
+.container {
+    margin-left: 200px;
+}
+#title {
+    width: 800px;
+    height: 50px;
+    border: 3px solid grey;
+    color: white;
+    background: black;
+}
+.fightSection {
+    width: 800px;
+    height: 350px;
+    color: white;
+    background: black;   
+    border: 1px solid grey; 
+}
+.boxSmall1 {
+    width: 375px;
+    height: 30px;
+    border: 1px solid grey;
+    color: white;
+    background: black;
+    text-align: center;   
+}
+.boxSmall2 {
+    width: 375px;
+    height: 30px;
+    border: 1px solid grey;
+    color: white;
+    background: black;
+    text-align: center;   
+}
+.boxvs {
+    width: 50px;
+    height: 30px;
+    border: 1px solid grey;
+    color: white;
+    background: black;
+   text-align: center;
+}
+
+.fighterBox {
+    width: 200px;
+    height: 350px;
+    color: white;
+    background: black;   
+    border: 1px solid grey; 
+    text-align: center;   
+}
+.boxLabel {
+    width: 800px;
+    height: 30px;
+    border: 1px solid grey;
+    color: white;
+    background: black;
+}
+
+
+
+
+
+#fighters{
+    width: 125px;
+    height: 200px;  
+    background: red;
+}
+h1 {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 2rem;
+}
+h2 {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.1rem;
+}
+p {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1rem;
+    margin-left: 10px;
+    margin-right: 10px;
+}
