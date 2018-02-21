@@ -117,10 +117,10 @@ $(function () {
             "name": "Zuri",
             "realName": "Zuri",
             "label": "zuri",
-            "photo": "./assets/images/zuri.jpg", 
+            "photo": "./assets/images/zuri.jpg",
             "photoWin": "./assets/images/zuriWin.jpg",
             "status": "combatant",
-            "healthPoints": 150,
+            "healthPoints": 100,
             "attackPower": 10,
             "counterAttack": 5,
         },
@@ -142,7 +142,7 @@ $(function () {
             "photo": "./assets/images/ross.jpg",
             "photoWin": "./assets/images/rossWin.jpg",
             "status": "combatant",
-            "healthPoints": 300,
+            "healthPoints": 150,
             "attackPower": 20,
             "counterAttack": 20,
         },
@@ -161,7 +161,7 @@ $(function () {
     var challengerHealth = "";
     var challengerAttack = "";
     var challengerCounterAttack = "";
-
+    var heartherb = 0;
     var level = 1;
 
     // ==============================================
@@ -238,9 +238,10 @@ $(function () {
     // ===
     // add heart shaped herbs
     var heartHerb =
+        '<img class = "herb" id="Herb1" src="./assets/images/heart.jpg">' +
         '<img class = "herb" id="Herb2" src="./assets/images/heart.jpg">' +
-        '<img class = "herb" id="Herb2" src="./assets/images/heart.jpg">' +
-        '<img class = "herb" id="Herb2" src="./assets/images/heart.jpg">';
+        '<img class = "herb" id="Herb3" src="./assets/images/heart.jpg">';
+
     // ===
     var loadHerb = () => {
         $("#heartHerbs").append(heartHerb);
@@ -270,16 +271,31 @@ $(function () {
                 $("#championHealthLevel").text("Health: " + characterHealth);
                 $("#championAttackLevel").text("Attack: " + characterAttack);
             }
+
             else if (characters[i].status === "challenger") {
-                $("#challenger").append(card);
-                $(".challengerName").html(characters[i].fullName);
-                $(".challengerText").text("Curent challenger");
-                challengerHealth = characters[i].healthPoints;
-                challengerAttack = characters[i].attackPower;
-                challenger = characters[i].label;
-                $("#challengerHealthLevel").text("Health: " + challengerHealth);
-                $("#challengerAttackLevel").text("Attack: " + challengerAttack);
+                if (heartherb < 1) {
+                    $("#challenger").append(card);
+                    $(".challengerName").html(characters[i].fullName);
+                    $(".challengerText").text("Curent challenger");
+                    challengerHealth = characters[i].healthPoints;
+                    challengerAttack = characters[i].attackPower;
+                    challenger = characters[i].label;
+                    $("#challengerHealthLevel").text("Health: " + challengerHealth);
+                    $("#challengerAttackLevel").text("Attack: " + challengerAttack);
+                }
+                else {
+                    $("#challenger").append(card);
+                    $(".challengerName").html(characters[i].fullName);
+                    $(".challengerText").text("Curent challenger");
+                    challengerHealth = challengerHealth;
+                    challengerAttack = characters[i].attackPower;
+                    challenger = characters[i].label;
+                    $("#challengerHealthLevel").text("Health: " + challengerHealth);
+                    $("#challengerAttackLevel").text("Attack: " + challengerAttack);
+                    heartherb = 0;
+                }
             }
+
             else if (characters[i].status === "combatant") {
                 $("#combatants").prepend(card);
                 $(".combatantText").text("Waiting Combatant");
@@ -289,6 +305,7 @@ $(function () {
                 $(".Dead_CombatantText").text("Dead_Combatant");
             }
         }
+
     };
 
 
@@ -310,13 +327,13 @@ $(function () {
     var winModal = () => {
         for (var i = 0; i < characters.length; i++) {
             if (characters[i].status === "champion") {
-            $("#modalSpace").empty();
-            $("#modalSpace").append('<div class="col-md-3">' + '<img id="winImg" src="'+characters[i].photoWin+'">' + '</div>');
-            $(".modal-footer").append('<button type="button" class="btn btn-dark btn-lg" data-dismiss="modal" onclick="location.reload();">Replay</button>');
+                $("#modalSpace").empty();
+                $("#modalSpace").append('<div class="col-md-3">' + '<img id="winImg" src="' + characters[i].photoWin + '">' + '</div>');
+                $(".modal-footer").append('<button type="button" class="btn btn-dark btn-lg" data-dismiss="modal" onclick="location.reload();">Replay</button>');
 
-            $(".modal-title").html("You are the Ruler of Wakanda!");
+                $(".modal-title").html("You are the Ruler of Wakanda!");
+            }
         }
-    }
     };
     var loseModal = () => {
         $("#modalSpace").empty();
@@ -334,6 +351,9 @@ $(function () {
         $("#challengerHealthLevel").text("Health: " + challengerHealth);
         $("#championHealthLevel").text("Health: " + characterHealth);
         $("#championAttackLevel").text("Attack: " + characterAttack);
+        // $("#healthBarChampion").data("aria-valuenow",characterHealth);
+
+
         if (challengerHealth <= 0) {
             for (var i = 0; i < characters.length; i++) {
                 if (challenger === characters[i].label) {
@@ -351,13 +371,13 @@ $(function () {
     };
     //===
     var winGame = () => {
-        var deathCount = 0;
+        var waiting_Combatants = 0;
         for (var i = 0; i < characters.length; i++) {
             if (characters[i].status === "combatant") {
-                deathCount++;
+                waiting_Combatants++;
             }
         }
-        if (deathCount === 0) {
+        if (waiting_Combatants === 0) {
             winModal();
             $("#Modal").modal("show");
 
@@ -380,6 +400,8 @@ $(function () {
     $("body").on("click", 'img.herb', function () {
         var herbimage = $(this).attr("id");
         characterHealth = initialCharacterHealth;
+        challengerHealth = challengerHealth;
+        heartherb++;
         addCharactersToFightSection();
         $("#" + herbimage).hide();
     });
