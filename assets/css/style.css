@@ -1,84 +1,112 @@
 body {
     background-image: url("../images/gun_metal.png");
 }
-.container {
-    margin-left: 200px;
+/* =========== */
+.navbarTitle {
+    width: 100%;
+    text-align: center;
 }
-#title {
-    width: 800px;
-    height: 50px;
-    border: 3px solid grey;
-    color: white;
-    background: black;
-}
-.fightSection {
-    width: 800px;
-    height: 350px;
-    color: white;
-    background: black;   
-    border: 1px solid grey; 
-}
-.boxSmall1 {
-    width: 375px;
-    height: 30px;
-    border: 1px solid grey;
-    color: white;
-    background: black;
-    text-align: center;   
-}
-.boxSmall2 {
-    width: 375px;
-    height: 30px;
-    border: 1px solid grey;
-    color: white;
-    background: black;
-    text-align: center;   
-}
-.boxvs {
-    width: 50px;
-    height: 30px;
-    border: 1px solid grey;
-    color: white;
-    background: black;
-   text-align: center;
+.championCard {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    /* margin-left: 1px;
+    margin-right: 1px; */
 }
 
-.fighterBox {
-    width: 200px;
-    height: 350px;
-    color: white;
-    background: black;   
-    border: 1px solid grey; 
-    text-align: center;   
+.card-body {
+    padding: 5px;
+    background-color: grey;
 }
-.boxLabel {
-    width: 800px;
-    height: 30px;
-    border: 1px solid grey;
-    color: white;
-    background: black;
+.cardName {
+    margin: 0px;
+    text-align: center;
+}
+.cardNameBreak {
+    margin: 1px;
+}
+.cardLevel {
+    margin: 1px;
+    text-align: center;
+}
+.cardStatus {
+    color: black;
+    background: white;
+}
+
+.modalSpace {
+    width: 100%;
+    border-radius: 10%;
+    margin-top: 5px;
+}
+.modal-content {
+    background: grey;
+}
+.combatantCard {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.championCard, .challengerCard {
+    margin-top: 30px;
+    margin-bottom: 5px;
+}
+.powerUp {
+    margin-top: 80%;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    text-align: center;
 }
 
 
+/* =========== */
+/* =========== */
+/* =========== */
 
-
-
-#fighters{
-    width: 125px;
-    height: 200px;  
-    background: red;
+#challengeText {
+    text-align: center;
 }
+#firstSelectionText {
+    text-align: center;
+}
+/* #challengers {} */
+#combatants {
+    display:flex;
+}
+
+
+/* =========== */
+/* =========== */
 h1 {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 2rem;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 3rem;
 }
 h2 {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 1.1rem;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2rem;
+}
+h3 {
+    color: white; 
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+}
+h4 {
+    color: white; 
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+}
+h5 {
+    color: black; 
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
 }
 p {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 1rem;
-    margin-left: 10px;
-    margin-right: 10px;
+    color: black; 
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: .80rem;
+    
 }
+
