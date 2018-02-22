@@ -39,57 +39,49 @@
         <div class="row battleSection">
             <div class="col-md-2">
                 <div class="powerUp">
-                    <h3>Heart Shaped Herb</h3>
-                    <div id="heartHerbs">
-                    </div>
                 </div>
             </div>
             <div class="col-md-3 attackGrid">
                 <div id="champion"></div>
-                <!-- <div class="progress">
-                    <div class="progress-bar" id="healthBarChampion" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div> -->
-                <button type="button" class="btn btn-dark btn-lg btn-block">Attack</button>
+                <div id="progressChampionBar"></div>
+                <div id="attackButton"></div>
             </div>
             <div class="col-md-2">
             </div>
             <div class="col-md-3">
                 <div id="challenger"></div>
-                <!-- <div class="progress">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div> -->
+                <div id="progressChallengerBar"></div>
+            </div>
+            <div class="col-md-2">
+            </div>
+
+            <div class="row combatantSection">
+                <section class="col-md-12">
+                    <div class="col" id="combatants">
+                    </div>
+                </section>
             </div>
         </div>
-        <div class="col-md-2">
-        </div>
+        <!-- ====================== -->
+        <!-- Boostrap Modal-->
+        <!-- ====================== -->
+        <div class="modal fade" id="Modal" tabindex="-1" role="dialog" data-keyboard="false" data-backdrop="static">
+            <div class="modal-dialog modal-dailog-centered modalSize" style="width: 80%;" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Your Opponent</h5>
 
-        <div class="row combatantSection">
-            <section class="col-md-12">
-                <div class="col" id="combatants">
-                </div>
-            </section>
-        </div>
-    </div>
-    <!-- ====================== -->
-    <!-- Boostrap Modal-->
-    <!-- ====================== -->
-    <div class="modal fade" id="Modal" tabindex="-1" role="dialog" data-keyboard="false" data-backdrop="static">
-        <div class="modal-dialog modal-dailog-centered modalSize" style="width: 80%;" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Your Opponent</h5>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row" id="modalSpace">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
 
-                </div>
-                <div class="modal-body">
-                    <div class="row" id="modalSpace">
                     </div>
                 </div>
-                <div class="modal-footer">
-
-                </div>
             </div>
         </div>
-    </div>
 
 
 
@@ -98,14 +90,14 @@
 
 
 
-    <!-- =================================================================== -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js " integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN "
-        crossorigin="anonymous "></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js " integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q "
-        crossorigin="anonymous "></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js " integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl "
-        crossorigin="anonymous "></script>
-    <script src="./assets/javascript/game.js "></script>
+        <!-- =================================================================== -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js " integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN "
+            crossorigin="anonymous "></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js " integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q "
+            crossorigin="anonymous "></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js " integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl "
+            crossorigin="anonymous "></script>
+        <script src="./assets/javascript/game.js "></script>
 </body>
 
 </html>

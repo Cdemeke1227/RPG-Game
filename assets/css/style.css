@@ -58,7 +58,10 @@ body {
     margin-right: 5px;
     text-align: center;
 }
-
+.progress {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
 
 /* =========== */
 /* =========== */

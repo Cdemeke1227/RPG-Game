@@ -3,18 +3,19 @@
 // Web-based Jquery Game
 
 // Need to make an object array for all characters
-// Need the characters to auto fill selection windo using array
+// Need the characters to auto fill selection window using array
 
-// When user clicks on first character ir moves, to battle area
-// Use modal to show remaining characters to select from 
+// When user clicks on first character it moves, to battle area
+// Use modal to show remaining characters to select from once character is selected on modal sent to battle area
 
-// The remaining characters are then changed to enemiels avialable for attack.
-
-// When user clicks on second cahracter if moves, to "challenger Place"
+// The remaining characters are then changed to waiting combatants avialable for attack.
 
 // When the attack but is clicked, an exchange of hit points takes place
-
 // With each attack the hit points increases
+// player can refill health by clicking heart shaped herb
+
+// When player dies Modal
+// When player wins Modal, to select next challanger or if there not any they win!
 
 // when user if defeated it is game over, when challenger is defeated user must choose another character to battel.
 
@@ -32,19 +33,8 @@ $(function () {
             "photo": "./assets/images/tchalla.jpg",
             "photoWin": "./assets/images/tchallaWin.jpg",
             "status": "combatant",
-            "healthPoints": 400,
-            "attackPower": 30,
-            "counterAttack": 25,
-        },
-        {
-            "name": "Shuri",
-            "realName": "Shuri",
-            "label": "shuri",
-            "photo": "./assets/images/shuri.jpg",
-            "photoWin": "./assets/images/shuriWin.jpg",
-            "status": "combatant",
-            "healthPoints": 250,
-            "attackPower": 30,
+            "healthPoints": 100,
+            "attackPower": 25,
             "counterAttack": 5,
         },
         {
@@ -54,20 +44,9 @@ $(function () {
             "photo": "./assets/images/killmonger.jpg",
             "photoWin": "./assets/images/killmongerWin.jpg",
             "status": "combatant",
-            "healthPoints": 400,
+            "healthPoints": 100,
             "attackPower": 30,
-            "counterAttack": 30
-        },
-        {
-            "name": "Nakia",
-            "realName": "Nakia",
-            "label": "nakia",
-            "photo": "./assets/images/nakia.jpg",
-            "photoWin": "./assets/images/nakiaWin.jpg",
-            "status": "combatant",
-            "healthPoints": 200,
-            "attackPower": 20,
-            "counterAttack": 20,
+            "counterAttack": 5
         },
         {
             "name": "Man Ape",
@@ -76,52 +55,8 @@ $(function () {
             "photo": "./assets/images/mbaku.jpg",
             "photoWin": "./assets/images/mbakuWin.jpg",
             "status": "combatant",
-            "healthPoints": 300,
-            "attackPower": 25,
-            "counterAttack": 20,
-        },
-        {
-            "name": "Okoye",
-            "realName": "okoye",
-            "label": "okoye",
-            "photo": "./assets/images/okoye.jpg",
-            "photoWin": "./assets/images/okoyeWin.jpg",
-            "status": "combatant",
-            "healthPoints": 200,
-            "attackPower": 10,
-            "counterAttack": 5,
-        },
-        {
-            "name": "Ramonda",
-            "realName": "Ramonda",
-            "label": "ramonda",
-            "photo": "./assets/images/ramonda.jpg",
-            "photoWin": "./assets/images/ramondaWin.jpg",
-            "status": "combatant",
-            "healthPoints": 300,
-            "attackPower": 20,
-            "counterAttack": 20,
-        },
-        {
-            "name": "W'kabi",
-            "realName": "W'kabi",
-            "label": "wkabi",
-            "photo": "./assets/images/wkabi.jpg",
-            "photoWin": "./assets/images/wkabiWin.jpg",
-            "status": "combatant",
-            "healthPoints": 250,
-            "attackPower": 20,
-            "counterAttack": 15,
-        },
-        {
-            "name": "Zuri",
-            "realName": "Zuri",
-            "label": "zuri",
-            "photo": "./assets/images/zuri.jpg",
-            "photoWin": "./assets/images/zuriWin.jpg",
-            "status": "combatant",
             "healthPoints": 100,
-            "attackPower": 10,
+            "attackPower": 25,
             "counterAttack": 5,
         },
         {
@@ -131,10 +66,56 @@ $(function () {
             "photo": "./assets/images/klaw.jpg",
             "photoWin": "./assets/images/klawWin.jpg",
             "status": "combatant",
-            "healthPoints": 300,
+            "healthPoints": 100,
             "attackPower": 25,
-            "counterAttack": 20,
+            "counterAttack": 5,
         },
+        {
+            "name": "Okoye",
+            "realName": "okoye",
+            "label": "okoye",
+            "photo": "./assets/images/okoye.jpg",
+            "photoWin": "./assets/images/okoyeWin.jpg",
+            "status": "combatant",
+            "healthPoints": 100,
+            "attackPower": 15,
+            "counterAttack": 5,
+        },
+        {
+            "name": "Shuri",
+            "realName": "Shuri",
+            "label": "shuri",
+            "photo": "./assets/images/shuri.jpg",
+            "photoWin": "./assets/images/shuriWin.jpg",
+            "status": "combatant",
+            "healthPoints": 100,
+            "attackPower": 20,
+            "counterAttack": 5
+        },
+        {
+            "name": "Nakia",
+            "realName": "Nakia",
+            "label": "nakia",
+            "photo": "./assets/images/nakia.jpg",
+            "photoWin": "./assets/images/nakiaWin.jpg",
+            "status": "combatant",
+            "healthPoints": 100,
+            "attackPower": 12,
+            "counterAttack": 5,
+        },
+        {
+            "name": "W'kabi",
+            "realName": "W'kabi",
+            "label": "wkabi",
+            "photo": "./assets/images/wkabi.jpg",
+            "photoWin": "./assets/images/wkabiWin.jpg",
+            "status": "combatant",
+            "healthPoints": 100,
+            "attackPower": 12,
+            "counterAttack": 4,
+        },
+
+
         {
             "name": "Agent Ross",
             "realName": "Everett K Ross",
@@ -142,11 +123,32 @@ $(function () {
             "photo": "./assets/images/ross.jpg",
             "photoWin": "./assets/images/rossWin.jpg",
             "status": "combatant",
-            "healthPoints": 150,
-            "attackPower": 20,
-            "counterAttack": 20,
+            "healthPoints": 100,
+            "attackPower": 10,
+            "counterAttack": 4,
         },
-
+        {
+            "name": "Zuri",
+            "realName": "Zuri",
+            "label": "zuri",
+            "photo": "./assets/images/zuri.jpg",
+            "photoWin": "./assets/images/zuriWin.jpg",
+            "status": "combatant",
+            "healthPoints": 100,
+            "attackPower": 8,
+            "counterAttack": 2,
+        },
+        {
+            "name": "Ramonda",
+            "realName": "Ramonda",
+            "label": "ramonda",
+            "photo": "./assets/images/ramonda.jpg",
+            "photoWin": "./assets/images/ramondaWin.jpg",
+            "status": "combatant",
+            "healthPoints": 100,
+            "attackPower": 8,
+            "counterAttack": 2,
+        },
     ];
 
     // ==============================================
@@ -229,10 +231,29 @@ $(function () {
                     '</div>' +
                     '</div>'
                 );
-                $("")
+                $(".powerUp").append(
+                    '<h3> Heart Shaped Herb</h3 > ' +
+                    '<div id = "heartHerbs">' +
+                    '</div>'
+                );
+                $("#attackButton").append(
+                    '<button type="button" class="btn btn-dark btn-lg btn-block">Attack</button>'
+                );
+                $("#progressChampionBar").append(
+                    '<div class="progress">' +
+                    '<div class="progress-bar bg-secondary" id="healthBarChampion" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>' +
+                    '</div>'
+                );
+
+                $("#progressChallengerBar").append(
+                    '<div class="progress">' +
+                    '<div class="progress-bar bg-secondary" id="healthBarChallenger" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>' +
+                    '</div>'
+                );
             }
         }
         challengerSelection();
+        loadHerb();
         $("#Modal").modal("show");
     });
     // ===
@@ -246,7 +267,7 @@ $(function () {
     var loadHerb = () => {
         $("#heartHerbs").append(heartHerb);
     };
-    loadHerb();
+
 
     // This will add characters to the fight section screen
     var addCharactersToFightSection = () => {
@@ -282,6 +303,8 @@ $(function () {
                     challenger = characters[i].label;
                     $("#challengerHealthLevel").text("Health: " + challengerHealth);
                     $("#challengerAttackLevel").text("Attack: " + challengerAttack);
+                    $("#healthBarChallenger").attr("aria-valuenow", "100");
+                    $("#healthBarChallenger").attr("style", "width: 100%");
                 }
                 else {
                     $("#challenger").append(card);
@@ -351,8 +374,10 @@ $(function () {
         $("#challengerHealthLevel").text("Health: " + challengerHealth);
         $("#championHealthLevel").text("Health: " + characterHealth);
         $("#championAttackLevel").text("Attack: " + characterAttack);
-        // $("#healthBarChampion").data("aria-valuenow",characterHealth);
-
+        $("#healthBarChampion").attr("aria-valuenow", characterHealth);
+        $("#healthBarChampion").attr("style", "width: " + characterHealth + "%");
+        $("#healthBarChallenger").attr("aria-valuenow", characterHealth);
+        $("#healthBarChallenger").attr("style", "width: " + characterHealth + "%");
 
         if (challengerHealth <= 0) {
             for (var i = 0; i < characters.length; i++) {
@@ -385,7 +410,7 @@ $(function () {
     };
 
 
-    // event listner on click when selecting your fighter cahracter
+    // event listner on click when selecting your challenger cahracter
     $("body").on("click", 'img.modalSpace', function () {
         var nchar = $(this).attr("id");
         for (var i = 0; i < characters.length; i++) {
@@ -402,6 +427,8 @@ $(function () {
         characterHealth = initialCharacterHealth;
         challengerHealth = challengerHealth;
         heartherb++;
+        $("#healthBarChampion").attr("aria-valuenow", characterHealth);
+        $("#healthBarChampion").attr("style", "width: " + characterHealth + "%");
         addCharactersToFightSection();
         $("#" + herbimage).hide();
     });
